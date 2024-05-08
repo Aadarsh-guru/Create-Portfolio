@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(uuid())
+  name          String
+  image         String
+  email         String      @unique
+  username      String?     @unique
+  domain        String?     @unique
+  isPremiumUser Boolean     @default(false) @map("is_premium_user")
+  premiumExpiry DateTime?   @map("premium_expiry")
+  customLogo    String?     @map("custom_logo")
+  customFavicon String?     @map("custom_favicon")
+  userInfo      UserInfo[]
+  socialUrls    SocialUrl[]
+  projects      Project[]
+  skills        Skill[]
+  views         View[]
+  purchases     Purchase[]
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime    @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model UserInfo {
+  id          String   @id @default(uuid())
+  heading     String?
+  subHeading  String?  @map("sub_heading")
+  description String?
+  keywords    String[]
+  image       String?
+  email       String?
+  phone       String?
+  resume      String?
+  isPublished Boolean  @default(false) @map("is_published")
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("users_info")
+}
+
+enum SocialProviderEnum {
+  INSTAGRAM
+  FACEBOOK
+  GITHUB
+  LINKEDIN
+  TWITTER
+  YOUTUBE
+  DISCORD
+  WHATSAPP
+  TELEGRAM
+  CUSTOM
+}
+
+model SocialUrl {
+  id        String             @id @default(uuid())
+  provider  SocialProviderEnum
+  url       String
+  userId    String             @map("user_id")
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime           @default(now()) @map("created_at")
+  updatedAt DateTime           @updatedAt @map("updated_at")
+
+  @@map("social_urls")
+}
+
+enum SkillEnum {
+  BEGINNER
+  INTERMEDIATE
+  EXPERT
+}
+
+model Skill {
+  id        String    @id @default(uuid())
+  skillName String    @map("skill_name")
+  expertise SkillEnum
+  userId    String    @map("user_id")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  @@map("skills")
+}
+
+model Project {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  image       String?
+  category    String?
+  isPublished Boolean   @default(false) @map("is_published")
+  isCompleted Boolean   @default(false) @map("is_completed")
+  projectUrl  String?   @map("project_url")
+  repoUrl     String?   @map("repo_url")
+  startDate   DateTime? @map("start_date")
+  endDate     DateTime? @map("end_date")
+  userId      String    @map("user_id")
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@map("projects")
+}
+
+model View {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  ipAddress String?  @map("ip_address")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("views")
+}
+
+model SiteData {
+  id           String   @id @default(uuid())
+  premiumPrice Float    @map("premium_price")
+  frontImage   String?  @map("front_image")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("site_data")
+}
+
+model Purchase {
+  id        String   @id @default(uuid())
+  price     Float
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("purchases")
+}
