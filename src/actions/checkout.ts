@@ -17,19 +17,13 @@ const checkoutAction = async () => {
         };
         if (!siteData?.premiumPrice || siteData?.premiumPrice === 0) {
             const session = await getServerSession();
-            const user = await prisma.user.update({
+            await prisma.user.update({
                 where: {
                     email: session?.user?.email!
                 },
                 data: {
                     isPremiumUser: true,
                     premiumExpiry: new Date(Date.now() + 31536000000),
-                }
-            });
-            await prisma.purchase.create({
-                data: {
-                    userId: user?.id,
-                    price: siteData?.premiumPrice
                 }
             });
             return {

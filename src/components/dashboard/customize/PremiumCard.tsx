@@ -20,7 +20,13 @@ const PremiumCard = ({ price }: { price: number }) => {
                 </CardTitle>
                 <CardDescription>
                     Unlock additional benefits by upgrading to a premium plan. {" "}
-                    <span className="text-sky-500" >We offer 30 days money back guarantee.</span>
+                    <span className="text-sky-500" >{
+                        (!price || price === 0)
+                            ?
+                            "It's a limited-time offer. Hurry UP! to avail benefits "
+                            :
+                            "We offer a 30-day money-back guarantee."
+                    }</span>
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4" >

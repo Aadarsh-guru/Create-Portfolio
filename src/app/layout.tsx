@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css';
 import AuthProvider from '@/providers/AuthProvider';
 import { Toaster } from '@/components/ui/toaster';
@@ -38,6 +39,7 @@ export default function RootLayout({
           <Toaster />
         </AuthProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
     </html>
   );
 };
