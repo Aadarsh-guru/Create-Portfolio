@@ -88,23 +88,6 @@ function CreateSkillModel() {
                     <Form {...form} >
                         <FormField
                             control={form.control}
-                            name="skillName"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormControl>
-                                        <Input
-                                            required
-                                            disabled={isSubmitting}
-                                            placeholder="e.g. 'Web Development'"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
                             name="expertise"
                             render={({ field }) => (
                                 <FormItem>
@@ -122,6 +105,23 @@ function CreateSkillModel() {
                                                 </SelectGroup>
                                             </SelectContent>
                                         </Select>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="skillName"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormControl>
+                                        <Input
+                                            required
+                                            disabled={isSubmitting}
+                                            placeholder="e.g. 'Web Development'"
+                                            {...field}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
