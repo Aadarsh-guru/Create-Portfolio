@@ -93,7 +93,7 @@ function CreateSkillModel() {
                                 <FormItem>
                                     <FormControl >
                                         <Select disabled={field.disabled} value={field.value} onValueChange={(e) => field.onChange(e)} >
-                                            <SelectTrigger className="w-full mt-4">
+                                            <SelectTrigger className="w-full">
                                                 <SelectValue placeholder="Select skill expertise" />
                                             </SelectTrigger>
                                             <SelectContent >
@@ -114,7 +114,7 @@ function CreateSkillModel() {
                             control={form.control}
                             name="skillName"
                             render={({ field }) => (
-                                <FormItem>
+                                <FormItem className="mt-4" >
                                     <FormControl>
                                         <Input
                                             required
