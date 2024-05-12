@@ -111,7 +111,6 @@ const DomainForm = ({ domain, userId }: DomainFormProps) => {
                         <ConfirmModel onConfirm={onDelete}>
                             <Button
                                 type="button"
-                                onClick={onDelete}
                                 variant={'destructive'}
                                 className="dark:bg-red-600"
                                 disabled={isDeleting || !domain || isSubmitting}
