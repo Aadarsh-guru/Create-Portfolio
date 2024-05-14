@@ -358,7 +358,7 @@ async function Home() {
             <div>
               <h2 className="text-xl font-semibold">How do I unlock premium features?</h2>
               <p className="mt-6 text-sm leading-6 tracking-wide text-gray-500">
-                To unlock premium features such as custom domain, logo, favicon and advanced customization options, you&apos;ll have to pay the premium amount. we support all the famous payment methods.
+                To unlock premium features such as custom domain, logo, favicon and advanced customization options, you&apos;ll have to pay the premium amount.
               </p>
             </div>
             <div>

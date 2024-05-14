@@ -32,6 +32,7 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
     "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.359.0",
     "next": "14.0.3",
     "next-auth": "^4.24.7",
@@ -47,11 +48,13 @@
     "react-share": "^5.1.0",
     "recharts": "^2.12.5",
     "sharp": "^0.33.1",
+    "stripe": "^15.6.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",

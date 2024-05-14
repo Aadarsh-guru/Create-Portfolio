@@ -22,7 +22,7 @@ const ViewProjectButton = ({ projectId, username }: { projectId: string, usernam
             variant={'outline'}
             onClick={() => router.push(path)}
         >
-            View Project
+            View Details
         </Button>
     );
 };
