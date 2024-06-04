@@ -11,10 +11,17 @@ export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_APP_NAME as string,
   description: process.env.NEXT_PUBLIC_APP_DESCRIPTION as string,
   keywords: process.env.NEXT_PUBLIC_APP_KEYWORDS as string,
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
+    type: "website",
+    url: process.env.NEXT_PUBLIC_APP_URL as string,
     title: process.env.NEXT_PUBLIC_APP_NAME as string,
     description: process.env.NEXT_PUBLIC_APP_DESCRIPTION as string,
     images: ['/icon.png'],
+    siteName: process.env.NEXT_PUBLIC_APP_NAME as string,
   },
   twitter: {
     card: "summary_large_image",

@@ -4,6 +4,10 @@ export const metadata: Metadata = {
     title: `Privacy Policy - ${process.env.NEXT_PUBLIC_APP_NAME as string}`,
     description: process.env.NEXT_PUBLIC_APP_DESCRIPTION as string,
     keywords: process.env.NEXT_PUBLIC_APP_KEYWORDS as string,
+    robots: {
+        index: true,
+        follow: true,
+    }
 };
 
 const PrivacyPolicyPage = () => {
