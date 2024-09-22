@@ -105,7 +105,10 @@ const UserSitePage = async ({ params }: { params: { identifier: string } }) => {
                 },
                 projects: {
                     where: {
-                        isPublished: true
+                        isPublished: true,
+                    },
+                    orderBy: {
+                        updatedAt: "desc",
                     }
                 },
                 userInfo: {
