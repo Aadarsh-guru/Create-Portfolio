@@ -65,12 +65,12 @@ const DomainForm = ({ domain, userId }: DomainFormProps) => {
         try {
             const { success, message } = await removeDomainAction(userId, domain!);
             if (success) {
+                router.refresh();
                 form.reset();
                 toast({
                     title: message,
                 });
             };
-            return router.refresh();
         } catch (error: any) {
             console.log(error);
             return toast({

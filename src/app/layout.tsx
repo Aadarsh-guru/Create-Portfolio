@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: process.env.NEXT_PUBLIC_APP_NAME as string,
     description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
     images: ['/icon.png'],
-    creator: "@createportfolio",
+    creator: "@aadarsh_guru",
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL as string),
 };
