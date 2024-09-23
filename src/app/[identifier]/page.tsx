@@ -94,14 +94,20 @@ const UserSitePage = async ({ params }: { params: { identifier: string } }) => {
                         id: true,
                         expertise: true,
                         skillName: true,
-                    }
+                    },
+                    orderBy: {
+                        updatedAt: "desc",
+                    },
                 },
                 socialUrls: {
                     select: {
                         id: true,
                         url: true,
                         provider: true,
-                    }
+                    },
+                    orderBy: {
+                        updatedAt: "desc",
+                    },
                 },
                 projects: {
                     where: {

@@ -36,7 +36,7 @@ const ProjectCard = ({ project, username }: ProjectCardProps) => {
                         <div className="flex items-center gap-x-1">
                             <IconBadge variant={'success'} size="sm" icon={Code2} />
                             <span className="text-xs font-medium text-emerald-500 transition-opacity hover:text-opacity-75" >
-                                View Code
+                                Source Code
                             </span>
                         </div>
                     </Link>
@@ -44,7 +44,7 @@ const ProjectCard = ({ project, username }: ProjectCardProps) => {
                         <div className="flex items-center gap-x-1">
                             <IconBadge size="sm" icon={LinkIcon} />
                             <span className="text-xs font-medium text-sky-500 transition-opacity hover:text-opacity-75" >
-                                Visit Project
+                                Live Demo
                             </span>
                         </div>
                     </Link>
