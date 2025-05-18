@@ -22,7 +22,6 @@ import {
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import prisma from "@/lib/prisma";
-import * as motion from "motion/react-client";
 import { Button } from "@/components/ui/button";
 import LoginDialog from "@/components/shared/LoginDialog";
 

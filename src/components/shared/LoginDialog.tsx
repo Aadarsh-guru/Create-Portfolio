@@ -2,7 +2,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,7 +24,6 @@ interface LoginDialogProps {
 const LoginDialog: React.FC<LoginDialogProps> = ({ children, className }) => {
 
     const router = useRouter();
-    const serachParams = useSearchParams();
     const [openDialog, setOpenDialog] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -38,7 +37,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ children, className }) => {
         } catch (error) {
             console.log(error);
             toast({
-                title: serachParams.get('error') || 'somethiong went wrong.',
+                title: 'somethiong went wrong.',
                 variant: "destructive",
             });
         } finally {
