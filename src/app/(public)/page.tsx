@@ -1,5 +1,3 @@
-import Image from "next/image";
-import prisma from "@/lib/prisma";
 import {
   Rocket,
   ArrowRight,
@@ -21,9 +19,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import prisma from "@/lib/prisma";
+import * as motion from "motion/react-client";
 import { Button } from "@/components/ui/button";
 import LoginDialog from "@/components/shared/LoginDialog";
-import { cn } from "@/lib/utils";
 
 async function Home() {
 
@@ -261,7 +262,7 @@ async function Home() {
             <CardHeader>
               <CardTitle className="flex flex-wrap gap-2 justify-between items-center" >
                 <span>Premium</span>
-                <span >₹{siteData?.premiumPrice ?? 0}/year</span>
+                <span >${siteData?.premiumPrice ?? 0}/year</span>
               </CardTitle>
               <CardDescription>
                 Access all our premium services for one year. {" "}

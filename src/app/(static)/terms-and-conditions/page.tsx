@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const TermsAndConditionsPage = () => {
 
     const appName = process.env.NEXT_PUBLIC_APP_NAME as string;
-    const mailId = process.env.NEXT_PUBLIC_ADMIN_EMAIL_ID as string;
+    const mailId = process.env.NEXT_PUBLIC_CONTACT_EMAIL as string;
 
     return (
         <div className="w-full min-h-screen">

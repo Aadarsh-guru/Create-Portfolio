@@ -10,14 +10,15 @@ const sesClient = new SESClient({
 });
 
 interface ISendMail {
+    from?: string;
     to: string;
     subject: string;
     html: string;
 };
 
-const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL_ID as string;
+const fromEmail = `CreatePortfolio <noreply@${process.env.NEXT_PUBLIC_ROOT_DOMAIN}>`;
 
-const sendMail = async ({ to, subject, html }: ISendMail) => {
+const sendMail = async ({ from, to, subject, html }: ISendMail) => {
     try {
         const params = {
             Destination: {
@@ -31,9 +32,8 @@ const sendMail = async ({ to, subject, html }: ISendMail) => {
                 },
                 Subject: { Data: subject },
             },
-            Source: adminEmail,
+            Source: from || fromEmail,
         };
-
         const command = new SendEmailCommand(params);
         return await sesClient.send(command);
     } catch (error) {

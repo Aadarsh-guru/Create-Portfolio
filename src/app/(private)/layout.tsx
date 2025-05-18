@@ -17,7 +17,7 @@ export default async function PrivateLayout({
     return (
         <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             storageKey={`theme-${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`}
         >
             <div className="h-full">

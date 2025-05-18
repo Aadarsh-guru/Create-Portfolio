@@ -1,9 +1,9 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google'
-import './globals.css';
-import AuthProvider from '@/providers/AuthProvider';
 import { Toaster } from '@/components/ui/toaster';
+import { Analytics } from "@vercel/analytics/next";
+import AuthProvider from '@/providers/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,7 +46,7 @@ export default function RootLayout({
           <Toaster />
         </AuthProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID as string} />
+      <Analytics />
     </html>
   );
 };

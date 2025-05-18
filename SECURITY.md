@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in Beocial, please follow these steps to report it:
 
-1. **Report the Issue**: Open an issue on our [GitHub repository](https://github.com/Aadarsh_guru/Create-Portfolio/issues) with detailed information about the vulnerability. If you prefer, you can contact us directly at [createportfolio.in@gmail.com](mailto:createportfolio.in@gmail.com).
+1. **Report the Issue**: Open an issue on our [GitHub repository](https://github.com/Aadarsh_guru/Create-Portfolio/issues) with detailed information about the vulnerability. If you prefer, you can contact us directly at [contact@createportfolio.site](mailto:contact@createportfolio.site).
 
 2. **Provide Details**: Include as much detail as possible about the vulnerability, including steps to reproduce it and any potential impact.
 

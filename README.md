@@ -35,7 +35,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or feedback, reach out at [createportfolio.in@gmail.com](mailto:createportfolio.in@gmail.com).
+For questions or feedback, reach out at [contact@createportfolio.site](mailto:contact@createportfolio.site).
 
 ---
 

@@ -16,7 +16,7 @@ const PremiumCard = ({ price }: { price: number }) => {
             <CardHeader>
                 <CardTitle className="flex flex-wrap gap-2 justify-between items-center" >
                     <span>Get Premium</span>
-                    <span >₹{price}/year</span>
+                    <span >${price}/year</span>
                 </CardTitle>
                 <CardDescription>
                     Unlock additional benefits by upgrading to a premium plan. {" "}

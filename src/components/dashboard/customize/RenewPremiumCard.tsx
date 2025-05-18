@@ -14,7 +14,7 @@ const RenewPremiumCard = ({ price }: { price: number }) => {
             <CardHeader>
                 <CardTitle className="flex flex-wrap gap-2 justify-between items-center" >
                     <span>Renew premium</span>
-                    <span >₹{price}/year</span>
+                    <span >${price}/year</span>
                 </CardTitle>
                 <CardDescription>Your premium subscription is expired. Please renew your premium subscription to continue using all the premium services.</CardDescription>
             </CardHeader>

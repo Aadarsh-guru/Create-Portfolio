@@ -38,7 +38,7 @@ const ContactForm = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
             const { success, message } = await sendContactMailAction({
-                to: process.env.NEXT_PUBLIC_ADMIN_EMAIL_ID as string,
+                to: process.env.NEXT_PUBLIC_CONTACT_EMAIL as string,
                 name: values.name,
                 email: values.email,
                 message: values.message,
